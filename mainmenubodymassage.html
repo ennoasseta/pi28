@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Body Massage Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#6f5940] text-white min-h-screen flex flex-col justify-between">
+  <div class="pt-16 flex flex-col items-center w-full max-w-[1024px] mx-auto px-4">
+    <h1 class="text-2xl font-bold mb-10 text-center">
+      BODY MASSAGE
+    </h1>
+    <div class="relative w-full max-w-[1024px]">
+      <!-- Carousel container -->
+      <div
+        class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 scrollbar-hide"
+        id="carousel"
+        style="-webkit-overflow-scrolling: touch;"
+      >
+        <!-- Slide 1 -->
+        <a href="balinese.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Close-up of hands massaging a foot in a spa setting with blurred background"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/a8d04c61-a292-4ffa-9003-d724b3aa6473.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            BALINESE MASSAGE
+          </div>
+        </a>
+        <!-- Slide 2 -->
+        <a href="javanese.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Hands massaging a person's upper back in a spa with mosaic tile background"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/f16a4e58-e740-433d-5a99-6dbd28ff0a9d.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            JAVANESE MASSAGE
+          </div>
+        </a>
+        <!-- Slide 3 -->
+        <a href="lymphatic.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Close-up of hands holding a black stone pressing on a foot during massage"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/fbc9c010-4dca-40f6-179d-d4f6bd32783c.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            LYMPHATIC MASSAGE
+          </div>
+        </a>
+        <!-- Slide 4 -->
+        <a href="sport.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Close-up of a person's abdomen covered with a white towel in a spa setting"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/d906355d-763f-4e0b-0399-3edc1ec21308.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            SPORT MASSAGE
+          </div>
+        </a>
+        <!-- Slide 5 - New Image 1 -->
+        <a href="relaxing.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Relaxing spa scene with aromatic candles and flowers"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/226472c2-7c82-476d-3d0a-f87825c75071.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            RELAXING SPA
+          </div>
+        </a>
+        <!-- Slide 6 - New Image 2 -->
+        <a href="essential.html" class="relative rounded-lg overflow-hidden flex-shrink-0 w-[240px] aspect-[11/16] snap-center block">
+          <img
+            alt="Close-up of essential oils and massage stones on wooden surface"
+            class="w-full h-full rounded-lg object-cover"
+            src="https://storage.googleapis.com/a1aa/image/df93a32e-bc24-4f40-f474-f1e2272937b3.jpg"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white font-bold text-sm px-3 py-2 rounded-b-lg text-center"
+          >
+            ESSENTIAL OILS
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center text-xs font-semibold pb-6 mt-10">
+    copyright reserverd allright
+  </footer>
+  <script>
+    const carousel = document.getElementById('carousel');
+    const scrollAmount = 246; // width + gap approx
+    let autoScrollInterval;
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        if (
+          carousel.scrollLeft + carousel.clientWidth >=
+          carousel.scrollWidth - 1
+        ) {
+          // If at end, scroll back to start
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, 4000);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    // Swipe support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+      stopAutoScroll();
+      isDown = true;
+      carousel.classList.add('cursor-grabbing');
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('cursor-grabbing');
+        startAutoScroll();
+      }
+    });
+
+    carousel.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('cursor-grabbing');
+        startAutoScroll();
+      }
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; //scroll-fast
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      stopAutoScroll();
+      touchStartX = e.touches[0].pageX;
+      touchScrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX;
+      const walk = (touchStartX - x) * 2;
+      carousel.scrollLeft = touchScrollLeft + walk;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      startAutoScroll();
+    });
+
+    // Start auto scroll on load
+    startAutoScroll();
+  </script>
+  <style>
+    /* Hide scrollbar for all browsers */
+    .scrollbar-hide {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+    /* Cursor grab styles */
+    #carousel {
+      cursor: grab;
+    }
+    #carousel.cursor-grabbing {
+      cursor: grabbing;
+    }
+  </style>
+</body>
+</html>
